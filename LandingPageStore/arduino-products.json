@@ -1,0 +1,17 @@
+[
+    {
+        "title" : "Arduino R4 Rev",
+        "price" : 20.01,
+        "image" : "assets/images/products/Arduino/ArduinoR4Rev.jpg"
+    },
+    {
+        "title" : "Arduino R4 Uno",
+        "price" : 10.99,
+        "image" : "assets/images/products/Arduino/ArduinoR4Uno.jpg"
+    },
+    {
+        "title" : "Arduino Uno Generic",
+        "price" : 15.40,
+        "image" : "assets/images/products/Arduino/ArduinoUnoGeneric.jpg"
+    }
+]

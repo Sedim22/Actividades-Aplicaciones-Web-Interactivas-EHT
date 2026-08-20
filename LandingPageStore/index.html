@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL SHOP</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+
+        <div class="header-container">
+            <div class="brand-container"> <img src="assets/images/logo.png" alt="logo.png"> <span>DIGITAL SHOP</span>  </div>
+            <div class="header-menu-container">
+                <a ><span>Home</span></a>
+                <a ><span>Products</span></a>
+                <a ><span>About us</span></a>
+                <a ><span>Reviews</span></a>
+            </div>
+            <div class="account-container">
+                <button>LOG IN</button>
+                <button>SIGN IN</button>
+            </div>
+        </div>
+
+        <div id="hero-image" class="hero-image">
+            <div id="hero-background-image" class="hero-background-image"></div>
+            <div class="hero-text">
+                <h1><span class="text-effect">YOUR RELIABLE</span></h1>
+                <h1><span class="text-effect">ELECTRONIC STORE</span></h1>
+            </div>            
+        </div>
+
+        <div class="shop-container">
+            
+            <div class="shop-menu-container">
+                <p style="font-weight: bold; font-size: 16pt;"><span>FEATURED PRODUCTS</span></p>
+                <ul>
+                    <li onclick="loadProducts('arduino-products.json')"><a>ARDUINOS</a></li>
+                    <li onclick="loadProducts('micro-products.json')"><a>MICROCONTROLLERS</a></li>
+                    <li onclick="loadProducts('capacitores-products.json')"><a>CAPACITORS</a></li>
+                </ul>
+            </div>
+
+            <div id="featured-products" class="featured-products-container">
+
+                <div class="featured-product">
+                    <img src="assets/images/logo.png" alt="product image">
+                    <div class="product-title"><span>PRODUCT NAME</span></div>
+                    <div class="product-price"><span>PRODUCT PRICE</span></div>
+                    <button>BUY</button>
+                </div>
+                
+                <div class="featured-product">
+                    <img src="assets/images/logo.png" alt="product image">
+                    <div class="product-title"><span>PRODUCT NAME</span></div>
+                    <div class="product-price"><span>PRODUCT PRICE</span></div>
+                    <button>BUY</button>
+                </div>
+                
+                <div class="featured-product">
+                    <img src="assets/images/logo.png" alt="product image">
+                    <div class="product-title"><span>PRODUCT NAME</span></div>
+                    <div class="product-price"><span>PRODUCT PRICE</span></div>
+                    <button>BUY</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="reviews-container">
+            <h1><span>REVIEWS FROM OUR CLIENTS</span></h1>
+            <div class="general-reviews">
+                <div class="review">
+                    <img src="assets/images/nina.png" alt="profile">
+                    <p><span>Excellent service. The shipping of the components was super fast and everything arrived very well packaged.</span></p>
+                </div>
+
+                <div class="review">
+                    <img src="assets/images/nina.png" alt="profile">
+                    <p><span>They have an incredible catalog. I always find the specific circuits and sensors I need for my projects.</span></p>
+                </div>
+
+                <div class="review">
+                    <img src="assets/images/nina.png" alt="profile">
+                    <p><span>My number one choice. The value for money is unbeatable and the customer service is fantastic.</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-container">
+            <span>DIGITAL SHOP</span>
+        </div>
+
+    </div>
+</body>
+</html>

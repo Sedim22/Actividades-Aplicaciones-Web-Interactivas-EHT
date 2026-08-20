@@ -1,0 +1,17 @@
+[
+    {
+        "title" : "ATMEGA328P",
+        "price" : 25.50,
+        "image" : "assets/images/products/Micro/ATMEGA328P.jpg"
+    },
+    {
+        "title" : "PIC16F84A",
+        "price" : 14.60,
+        "image" : "assets/images/products/Micro/PIC16F84A.jpg"
+    },
+    {
+        "title" : "TTAMG",
+        "price" : 17.00,
+        "image" : "assets/images/products/Micro/TTAMG.jpg"
+    }
+]

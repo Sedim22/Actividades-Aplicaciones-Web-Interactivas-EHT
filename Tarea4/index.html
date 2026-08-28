@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <title>DIGITAL SHOP</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    </head>
+
+    <body>
+        <nav
+            class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top"
+        >
+            <div class="container">
+                <a class="navbar-brand d-flex gap-2" href="">
+                   <i class="bi bi-wrench-adjustable-circle-fill"></i> <h4 class="fw-bold">DIGITAL SHOP</h4>
+                </a>
+                <button
+                    class="navbar-toggler d-lg-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mt-2 mt-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#AboutUs">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Reviews">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Faq">Faq</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="dropdownId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >
+                                <i class="bi bi-person-circle"></i> Account
+                                </a
+                            >
+                            <div
+                                class="dropdown-menu"
+                                aria-labelledby="dropdownId"
+                            >
+                                <a class="dropdown-item" href="#"
+                                    data-bs-toggle="modal" data-bs-target="#LogModal"
+                                    >Log In</a
+                                >
+                                <a class="dropdown-item" href="#"
+                                    data-bs-toggle="modal" data-bs-target="#LogModal"
+                                    >Sign In</a
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container text-center p-4" style="margin-top: 60px;">
+            
+            
+            
+            <div id="carouselId" class="carousel slide p-3 shadow-lg" data-bs-ride="carousel">
+                
+               
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active d-flex justify-content-center align-items-center">
+                        <img
+                            src="images/hero/example.png"
+                            class="w-100 d-block"
+                            alt="First slide"
+                        />
+
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="images/hero/example2.jpg"
+                            class="w-100 d-block"
+                            alt="Second slide"
+                        />
+                        <div class="carousel-caption border border-3 rounded-3 shadow-lg d-none d-sm-block">
+                            <h5 class="fw-bold">Your reliable electronic store</h5>
+                            <p>Where you can find any kind of electronic pieces</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="images/hero/example3.jpg"
+                            class="w-100 d-block"
+                            alt="Third slide"
+                        />
+                        <div class="carousel-caption border border-3 rounded-3 shadow-lg d-none d-sm-block">
+                            <h5 class="fw-bold">Great prices</h5>
+                            <p>Get any electronic component at affordable prices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselId"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselId"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
+
+            <h1 id="AboutUs" class="p-4">About Us</h1>
+                                <h4 class="">We equip everyday users and tech enthusiasts alike with high-performance, affordable electronics for work, play, and everything in between.</h4>
+            
+
+
+            <h1 id="Products" class="p-4">Products</h1>
+            <div class="alert alert-warning" role="alert" >
+                You are not currently logged in. <a data-bs-toggle="modal" data-bs-target="#LogModal"><strong>Log In or Create Account to buy products</strong></a>
+            </div>
+            <!-- Product Tabs tabs -->
+            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link active"
+                        id="home-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#home"
+                        type="button"
+                        role="tab"
+                        aria-controls="home"
+                        aria-selected="true"
+                    >
+                        ARDUINOS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link"
+                        id="profile-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#profile"
+                        type="button"
+                        role="tab"
+                        aria-controls="profile"
+                        aria-selected="false"
+                    >
+                        MICROCONTROLLERS
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button
+                        class="nav-link"
+                        id="messages-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#messages"
+                        type="button"
+                        role="tab"
+                        aria-controls="messages"
+                        aria-selected="false"
+                    >
+                        CAPACTORS
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content p-5">
+                
+                <div
+                    class="tab-pane active"
+                    id="home"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                >
+
+                    <div
+                        class="row justify-content-center align-items-center g-5"
+                    > 
+                        <div class="col-auto">
+                            <div class="card text-start p-3" style="width: 230px;">
+                            <img style="width: auto; height: 180px;" class="card-img-top" src="images/products/Arduino/ArduinoR4Rev.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="fw-bold card-title">Rev4</h4>
+                                    <h4 class="card-text">$30.00</h4>
+                                    <span class="border border-success p-1 text-success">Available</span>
+                                    <br><br>
+                                    <button
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#LogModal"
+                                    >
+                                    Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="card text-start p-3" style="width: 230px;">
+                                <img class="card-img-top" src="images/products/Arduino/ArduinoR4Uno.jpg" alt="Title" style="width: auto; height: 180px;" />
+                                <div class="card-body">
+                                    <h4 class="fw-bold card-title">R4 Uno</h4>
+                                    <h4 class="card-text">$20.00</h4>
+                                    <span class="border border-danger p-1 text-danger">Out of Stock</span>
+                                    <br><br>
+                                    <button
+                                    class="btn bg-secondary btn-disabled"
+                                    >
+                                    Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto">
+                            <div class="card text-start p-3" style="width: 230px;">
+                                <img style="width: auto; height: 180px;" class="card-img-top" src="images/products/Arduino/ArduinoUnoGeneric.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="fw-bold card-title">Uno Generic</h4>
+                                    <h4 class="card-text">$15.00</h4>
+                                    <span class="border border-success p-1 text-success">Available</span>
+                                    <br><br>
+                                    <button
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#LogModal"
+                                    >
+                                    Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                   
+                
+                </div>
+
+
+
+                <div
+                    class="tab-pane"
+                    id="profile"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab"
+                >
+
+                    <div
+                            class="row justify-content-center align-items-center g-5"
+                        > 
+                            <div class="col-auto">
+                                <div class="card text-start p-3" style="width: 230px;">
+                                <img style="width: auto; height: 180px;" class="card-img-top" src="images/products/Micro/ATMEGA328P.jpg" alt="Title" />
+                                    <div class="card-body">
+                                        <h4 class="fw-bold card-title">AT,EGA328P</h4>
+                                        <h4 class="card-text">$25.00</h4>
+                                        <span class="border border-success p-1 text-success">Available</span>
+                                        <br><br>
+                                        <button
+                                        class="btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#LogModal"
+                                        >
+                                        Buy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-auto">
+                                <div class="card text-start p-3" style="width: 230px;">
+                                    <img class="card-img-top" src="images/products/Micro/PIC16F84A.jpg" alt="Title" style="width: auto; height: 180px;" />
+                                    <div class="card-body">
+                                        <h4 class="fw-bold card-title">PIC16F84A</h4>
+                                        <h4 class="card-text">$28.00</h4>
+                                        <span class="border border-danger p-1 text-danger">Out of Stock</span>
+                                        <br><br>
+                                        <button
+                                        class="btn bg-secondary btn-disabled"
+                                        >
+                                        Buy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-auto">
+                                <div class="card text-start p-3" style="width: 230px;">
+                                    <img style="width: auto; height: 180px;" class="card-img-top" src="images/products/Micro/TTAMG.jpg" alt="Title" />
+                                    <div class="card-body">
+                                        <h4 class="fw-bold card-title">TTAMG</h4>
+                                        <h4 class="card-text">$10.00</h4>
+                                        <span class="border border-success p-1 text-success">Available</span>
+                                        <br><br>
+                                        <button
+                                        class="btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#LogModal"
+                                        >
+                                        Buy
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                </div>
+
+                <div
+                    class="tab-pane"
+                    id="messages"
+                    role="tabpanel"
+                    aria-labelledby="messages-tab"
+                >
+                     <div
+                        class="row justify-content-center align-items-center g-5"
+                    > 
+                        <div class="col-auto">
+                            <div class="card text-start p-3" style="width: 230px;">
+                            <img style="width: auto; height: 180px;" class="card-img-top" src="images/products/Capacitores/10000uF100V.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="fw-bold card-title">10000uF100V</h4>
+                                    <h4 class="card-text">$35.00</h4>
+                                    <span class="border border-success p-1 text-success">Available</span>
+                                    <br><br>
+                                    <button
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#LogModal"
+                                    >
+                                    Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
+                            <div class="card text-start p-3" style="width: 230px;">
+                                <img class="card-img-top" src="images/products/Capacitores/31d+sliBW3S._AC_.jpg" alt="Title" style="width: auto; height: 180px;" />
+                                <div class="card-body">
+                                    <h4 class="fw-bold card-title">31d+sliBW3S</h4>
+                                    <h4 class="card-text">$20.00</h4>
+                                    <span class="border border-danger p-1 text-danger">Out of Stock</span>
+                                    <br><br>
+                                    <button
+                                    class="btn bg-secondary btn-disabled"
+                                    >
+                                    Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-auto">
+                            <div class="card text-start p-3" style="width: 230px;">
+                                <img style="width: auto; height: 180px;" class="card-img-top" src="images/products/Capacitores/450V68UF.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="fw-bold card-title">450V68UF</h4>
+                                    <h4 class="card-text">$15.00</h4>
+                                    <span class="border border-success p-1 text-success">Available</span>
+                                    <br><br>
+                                    <button
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal" data-bs-target="#LogModal"
+                                    >
+                                    Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <!-- Log In Modal -->
+            <div
+                class="modal fade"
+                id="LogModal"
+                tabindex="-1"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                
+                role="dialog"
+                aria-labelledby="modalTitleId"
+                aria-hidden="true"
+            >
+                <div
+                    class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                    role="document"
+                >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title fw-bold" id="modalTitleId">
+                                Log In
+                            </h5>
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body">
+                           <div class="mb-3 text-start fw-bold">
+                            <label for="" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name=""
+                                id=""
+                                aria-describedby="emailHelpId"
+                                placeholder="abc@mail.com"
+                            />
+                            <label for="" class="form-label">Password</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                name=""
+                                id=""
+                                aria-describedby="emailHelpId"
+                                placeholder="Insert password here"
+                            />
+                           </div>
+                           <div><a href="" class="text-primary">Forgot password</a></div>
+                           <div><a href="" class="text-primary">Sign In</a></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            >
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-primary">Log In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                const myModal = new bootstrap.Modal(
+                    document.getElementById("modalId"),
+                    options,
+                );
+            </script>
+            
+
+
+            <h1 id="Reviews" class="p-4">Reviews</h1>
+
+            <div
+                class="container d-md-flex justify-content-center align-items-center"
+            >
+                <div class="row justify-content-center">
+                    <div class="col-auto p-4">
+                        <div class="border rounded-3 border-2 shadow-md d-md-flex justify-content-center align-items-center p-3">
+                            <div class="">
+                                <img style="width: auto; height:150px"
+                                class="rounded-circle shadow-lg m-4" 
+                                src="images/nina.png" 
+                                alt="profile">
+                                <br>
+                                <span class="bg-warning fw-bold m-4 p-1 border rounded-3">Frequet User</span>
+                                </div>
+                            <div>
+                                <p class="m-4 fw-bold">
+                                    Excellent service. The shipping of the components was super fast and everything arrived very well packaged.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-auto p-4">
+                        <div class="border rounded-3 border-2 shadow-md d-md-flex justify-content-center align-items-center p-3">
+                            <div class="">
+                                <img style="width: auto; height:150px"
+                                class="rounded-circle shadow-lg m-4" 
+                                src="images/nina.png" 
+                                alt="profile">
+                                <br>
+                                <span class="bg-warning fw-bold m-4 p-1 border rounded-3">Frequet User</span>
+                                </div>
+                            <div>
+                                <p class="m-4 fw-bold">
+                                    They have an incredible catalog. I always find the specific circuits and sensors I need for my projects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-auto p-4">
+                        <div class="border rounded-3 border-2 shadow-md d-md-flex justify-content-center align-items-center p-3">
+                            <div class="">
+                                <img style="width: auto; height:150px"
+                                class="rounded-circle shadow-lg m-4" 
+                                src="images/nina.png" 
+                                alt="profile">
+                                <br>
+                                <span class="bg-warning fw-bold m-4 p-1 border rounded-3">Frequet User</span>
+                                </div>
+                            <div>
+                                <p class="m-4 fw-bold">
+                                    My number one choice. The value for money is unbeatable and the customer service is fantastic.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+            <h1 id="Faq" class="p-4">Faq</h1>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                            aria-expanded="false"
+                            aria-controls="collapseOne"
+                        >
+                           <i class="bi bi-credit-card"></i> <span>Payment Methods</span>
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample"
+                    >
+                        <div class="accordion-body text-start">
+                            We accept the following payment methods:
+                            <br>
+                            <span class="fw-bold">Online</span>
+                            <div class="d-flex gap-5">
+                                <img class="img-thumbnail" src="images/visa.webp" alt="visa" style="width: auto; height: 64px;">
+                                <img class="img-thumbnail" src="images/mastercard.png" alt="visa" style="width: auto; height: 64px;">
+                                <img class="img-thumbnail" src="images/paypal.png" alt="visa" style="width: auto; height: 64px;">
+                            </div>
+                            <span class="fw-bold">Local Stores</span>
+                            <br>
+                            <span class="text-muted">Payment could be processed in a range of 1-3 days</span>
+                            <div class="d-flex gap-5">
+                                <img class="img-thumbnail" src="images/seven-eleven.png" alt="visa" style="width: auto; height: 64px;">
+                                <img class="img-thumbnail" src="images/oxxo.webp" alt="visa" style="width: auto; height: 64px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="bi bi-truck"></i> Which countries do you deliver?
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-start">
+                            Currently, the shop can only deliver to customers from <strong>México, Canada and USA </strong>,
+                            but were planning in the future to expand our deliveries to more regions.
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <hr class="border-3">
+        <footer class="d-flex flex-column justify-content-center align-items-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="">1</a></li>
+                    <li class="page-item"><a class="page-link" href="">2</a></li>
+                    <li class="page-item"><a class="page-link" href="">3</a></li>
+                    <li class="page-item"><a class="page-link" href="">Next</a></li>
+                </ul>
+            </nav>
+            <p>  <i class="bi bi-tools"></i> © 2026 www.DigitalShop.com - All Rights Reserved.</p>
+        </footer>
+        
+        
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+

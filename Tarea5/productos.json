@@ -1,0 +1,26 @@
+[
+    {
+        "id" : "p-1",
+        "nombre" : "Reloj Deportivo",
+        "descripcion" : "Diseño resistente y elegante.",
+        "precio" : 39.99,
+        "etiqueta": "nuevo",
+        "imagen": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=80"
+    },
+    {
+        "id" : "p-2",
+        "nombre" : "Zapatillas urbanas",
+        "descripcion" : "Comodidad y estilo para tu día.",
+        "precio" : 59.99,
+        "etiqueta": "oferta",
+        "imagen": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&auto=format&fit=crop&q=80"
+    },
+    {
+        "id" : "p-3",
+        "nombre" : "Auriculares inalámbricos",
+        "descripcion" : "Sonido envolvente y larga duración.",
+        "precio" : 89.99,
+        "etiqueta": "eco",
+        "imagen": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&auto=format&fit=crop&q=80"
+    }
+]

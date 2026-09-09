@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <title>MovieReviews</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    </head>
+
+    <body>
+        <nav
+            class="navbar navbar-expand-sm navbar-dark bg-dark p-md-3"
+        >
+            <div class="container">
+                <a class="navbar-brand" href="index.html"> <strong><span class="text-primary"><i class="bi bi-camera-reels"></i> Movie</span>Reviews</strong></a>
+                <button
+                    class="navbar-toggler d-lg-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html" aria-current="page"
+                                ><i class="bi bi-house"></i> Inicio
+                                <span class="visually-hidden">(current)</span></a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               data-bs-toggle="modal"
+                               data-bs-target="#modalFav"
+                            > <i class="bi bi-heart-fill text-danger"></i>  Favoritos <span
+                                class="badge rounded-pill text-bg-danger fav-count"
+                                >0</span
+                            >
+                             </a>
+                        </li>
+                    </ul>
+                    <form class="d-flex my-2 my-lg-0 mx-3">
+                        <input
+                            id="search-bar"
+                            class="form-control me-sm-2"
+                            type="text"
+                            placeholder="Buscar Pelicula..."
+                        />
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+           <div id="page-title" class="d-md-flex justify-content-center mt-4">
+                <p class="display-2 text-center fw-bold mx-3"><i class="bi bi-film text-primary"></i></p>
+                <p class="display-2 text-center fw-bold">Peliculas <span class="text-primary">Destacadas</span></p>
+           </div>
+           <div id="lead-page-title"><p class="text-center lead">Las mejores peliculas segun la crítica y el público</p></div>
+           <!--Botones de filtro-->
+           <div class="container group my-5" role="group">
+                <button id="b-all" class="btn btn-outline-primary active m-1">Todos</button>
+                <button id="b-1990" class="btn btn-outline-primary m-1 ">1990-1999</button>
+                <button id="b-2000" class="btn btn-outline-primary m-1">2000-2009</button>
+                <button id="b-2010" class="btn btn-outline-primary m-1">2010-2019</button>
+                <button id="b-2020" class="btn btn-outline-primary m-1">2020-2026</button>
+           </div>
+
+           
+           <div class="container my-3">
+                <!--Spinner de carga-->
+                <div
+                    id="loading-status"
+                    class="d-flex justify-content-center align-items-center"
+                >
+                    <div
+                        class="spinner-border text-primary spinner-border-sm"
+                        style="height: 5rem; width: 5rem;"
+                        role="status"
+                    >
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <!--Alerta de error-->
+                <div class="alert alert-danger text-center" role="alert" id="error-alert">
+                    <div><i class="bi bi-exclamation-circle"></i> <strong>ERROR:</strong> No se pudo cargar las peliculas.</div>
+                    <button id="reload" class="btn btn-primary"><i class="bi bi-arrow-clockwise"></i>Recargar</button>  
+                </div>
+
+                <!--Alerta de busqueda-->
+                <div class="alert alert-warning text-center" role="alert" id="warn-alert">
+                    <i class="bi bi-exclamation-circle"></i> Ninguna pelicula coincicde con tu busqueda.
+                </div>
+                
+                <!--Grid de peliculas-->
+                <div id="movie-grid" class="container">
+                </div>
+           </div>
+        </div>
+
+        <div class="container-fluid bg-dark">
+            <p class="lead text-white text-center p-5">© MovieReviews</p>
+        </div>
+
+        
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        
+        <script type="module" src="index.js"></script>
+    </body>
+</html>

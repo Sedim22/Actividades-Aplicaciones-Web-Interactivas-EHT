@@ -1,0 +1,3 @@
+GET https://imdb236.p.rapidapi.com/api/imdb/search?type=movie
+x-rapidapi-key: a0762e0fbamshf73b2c28d7bd7e4p16603fjsnff9a93eaaa3d
+x-rapidapi-host: imdb236.p.rapidapi.com

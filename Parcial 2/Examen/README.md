@@ -61,7 +61,7 @@ El cierre de sesión utiliza POST con CSRF, invalida la sesión y regenera el to
 
 1. Como invitado, visitar `/`, `/registro` y `/login`.
 2. Registrar una cuenta: debe ingresar al panel de jugador y mostrar el rol Jugador.
-3. Probar correo duplicado, campos vacíos, contraseña de menos de ocho caracteres y confirmación diferente. Deben aparecer errores en español junto a cada campo. Para probar las validaciones del servidor con campos vacíos, desactivar la validación del navegador o usar las pruebas automatizadas.
+3. Probar correo duplicado, campos vacíos, contraseña de menos de ocho caracteres y confirmación diferente. Al enviar el formulario deben aparecer errores en español junto a cada campo. Los formularios usan `novalidate` para mostrar directamente los mensajes del servidor, incluidos los de campos vacíos.
 4. Cerrar sesión y comprobar que `/jugador` y `/admin` redirigen al login con un aviso.
 5. Entrar con la cuenta demo del administrador: debe abrir `/admin`. Intentar `/jugador` y comprobar que se deniega el acceso.
 6. Entrar con la cuenta demo del jugador: debe abrir `/jugador`. Intentar `/admin` y comprobar que se deniega el acceso.
@@ -119,6 +119,19 @@ El modelo `Torneos` centraliza la consulta de disponibles y el cálculo de plaza
 
 Inscribirse, cancelar y dar de baja utilizan transacciones con bloqueo del torneo y reintentos ante conflictos de concurrencia. La disponibilidad se vuelve a comprobar dentro de la transacción y la base de datos conserva su restricción única de torneo y jugador. El mismo bloqueo se utiliza al editar el cupo. Todos los formularios que modifican datos incluyen CSRF; las bajas y cancelaciones usan DELETE mediante formularios POST, nunca enlaces GET. Los permisos por rol se verifican antes de resolver los identificadores de las rutas.
 
+## Cómo probar el sexto punto
+
+1. Enviar vacíos los formularios de registro, login y creación de torneos. Cada campo obligatorio muestra su mensaje en español, borde rojo y estado de error accesible.
+2. En el registro, escribir contraseñas diferentes. El mensaje **Las contraseñas no coinciden** aparece debajo de **Confirmar contraseña**. Las contraseñas no se vuelven a rellenar al regresar al formulario.
+3. Enviar un formulario con algunos datos válidos y otros incorrectos. Los valores no sensibles se conservan; los campos con datos que pasaron la validación muestran borde verde y **El formato de este campo es válido**. Este aviso confirma la validación del campo, no el guardado del formulario. No se muestran avisos verdes antes del primer envío ni en contraseñas borradas.
+4. Probar un correo duplicado, correo inválido, fecha no futura, cupo fuera de rango y reducción del cupo por debajo de los inscritos. El error se muestra junto al campo que debe corregirse.
+5. Intentar iniciar sesión con credenciales incorrectas. Correo y contraseña muestran el mismo aviso genérico, sin revelar cuál de los dos es incorrecto.
+6. Completar correctamente un registro, login, creación o edición de torneo, inscripción, cancelación o baja. La página de destino muestra un aviso de éxito en español. Los errores de permisos, torneo cerrado, lleno o inscripción duplicada se muestran como alertas de error. Las alertas se pueden cerrar.
+
+Los campos de registro, login y torneos usan el componente Blade `resources/views/components/campo.blade.php`, con estilos Bootstrap `is-invalid`, `invalid-feedback`, `is-valid` y `valid-feedback`. Los mensajes se relacionan con su control mediante `aria-describedby`. Laravel conserva todas las validaciones del servidor; `novalidate` solo evita los avisos emergentes nativos del navegador. No se guardan datos cuando falla la validación.
+
+Este README incluye instalación, cuentas demo y pasos para probar los seis puntos del examen.
+
 ## Pruebas automatizadas
 
 Ejecutar `php artisan test`. Las pruebas usan SQLite en memoria, sin modificar la base de datos de desarrollo; PHP necesita `pdo_sqlite` habilitado.
@@ -129,8 +142,10 @@ Para comprobar solo el tercer punto: `php artisan test --filter=TorneosPublicosT
 
 Para comprobar los puntos 4 y 5: `php artisan test --filter=Inscripciones`.
 
+Para comprobar los mensajes junto a los campos: `php artisan test --filter=MensajesFormularioTest`.
+
 ## Alcance actual
 
-Están implementados los puntos 1 a 5: autenticación, permisos por rol, CRUD administrativo, consulta pública de torneos, inscripciones del jugador, **Mis torneos**, cancelaciones y bajas por el administrador. Las vistas usan Bootstrap y los mensajes de estos flujos están en español.
+Están implementados los puntos 1 a 6: autenticación, permisos por rol, CRUD administrativo, consulta pública de torneos, inscripciones del jugador, **Mis torneos**, cancelaciones, bajas por el administrador, mensajes por campo y documentación. Las vistas usan Bootstrap y los mensajes de estos flujos están en español.
 
 Referencias: [autenticación de Laravel](https://laravel.com/docs/12.x/authentication), [middleware de Laravel](https://laravel.com/docs/12.x/middleware) y [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/).

@@ -48,10 +48,19 @@
 
     <main id="contenido" class="container py-4 py-md-5 flex-grow-1">
         @if (session('success'))
-            <div class="alert alert-success" role="status">{{ session('success') }}</div>
+            <div class="alert alert-success alert-dismissible fade show" role="status">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar mensaje de éxito"></button>
+            </div>
         @endif
         @if (session('error'))
-            <div class="alert alert-danger" role="alert">{{ session('error') }}</div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar mensaje de error"></button>
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">No se pudo completar el formulario. Revisa los mensajes junto a los campos marcados.</div>
         @endif
         @yield('content')
     </main>

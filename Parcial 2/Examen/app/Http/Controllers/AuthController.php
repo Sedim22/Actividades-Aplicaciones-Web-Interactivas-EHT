@@ -51,6 +51,7 @@ class AuthController extends Controller
 
             throw ValidationException::withMessages([
                 'email' => 'El correo electrónico o la contraseña son incorrectos.',
+                'password' => 'El correo electrónico o la contraseña son incorrectos.',
             ]);
         }
 

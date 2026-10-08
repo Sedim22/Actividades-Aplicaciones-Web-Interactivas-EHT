@@ -14,7 +14,7 @@
             </div>
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
-                    <form method="POST" action="{{ route('admin.torneos.update', $torneo) }}">
+                    <form method="POST" action="{{ route('admin.torneos.update', $torneo) }}" novalidate>
                         @csrf
                         @method('PUT')
                         @include('admin.torneos.formulario')

@@ -9,21 +9,14 @@
                 <div class="card-body p-4 p-md-5">
                     <h1 class="h3">Inicia sesión</h1>
                     <p class="text-body-secondary mb-4">Ingresa con tu correo y contraseña.</p>
-                    <form method="POST" action="{{ route('login.store') }}">
+                    <form method="POST" action="{{ route('login.store') }}" novalidate>
                         @csrf
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input id="email" type="email" name="email" value="{{ old('email') }}"
-                                   class="form-control @error('email') is-invalid @enderror" required maxlength="255" autocomplete="username" autofocus
-                                   @error('email') aria-invalid="true" aria-describedby="email-error" @enderror>
-                            @error('email')<div id="email-error" class="invalid-feedback">{{ $message }}</div>@enderror
+                            <x-campo name="email" label="Correo electrónico" type="email" required
+                                     maxlength="255" autocomplete="username" autofocus />
                         </div>
                         <div class="mb-4">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input id="password" type="password" name="password"
-                                   class="form-control @error('password') is-invalid @enderror" required autocomplete="current-password"
-                                   @error('password') aria-invalid="true" aria-describedby="password-error" @enderror>
-                            @error('password')<div id="password-error" class="invalid-feedback">{{ $message }}</div>@enderror
+                            <x-campo name="password" label="Contraseña" type="password" required autocomplete="current-password" />
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
                     </form>

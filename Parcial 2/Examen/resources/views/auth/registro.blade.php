@@ -9,37 +9,21 @@
                 <div class="card-body p-4 p-md-5">
                     <h1 class="h3">Crea tu cuenta</h1>
                     <p class="text-body-secondary mb-4">Regístrate como jugador. Todos los campos son obligatorios.</p>
-                    <form method="POST" action="{{ route('registro.store') }}">
+                    <form method="POST" action="{{ route('registro.store') }}" novalidate>
                         @csrf
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input id="name" type="text" name="name" value="{{ old('name') }}"
-                                   class="form-control @error('name') is-invalid @enderror" required maxlength="255" autocomplete="name" autofocus
-                                   @error('name') aria-invalid="true" aria-describedby="name-error" @enderror>
-                            @error('name')<div id="name-error" class="invalid-feedback">{{ $message }}</div>@enderror
+                            <x-campo name="name" label="Nombre" required maxlength="255" autocomplete="name" autofocus />
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input id="email" type="email" name="email" value="{{ old('email') }}"
-                                   class="form-control @error('email') is-invalid @enderror" required maxlength="255" autocomplete="email"
-                                   @error('email') aria-invalid="true" aria-describedby="email-error" @enderror>
-                            @error('email')<div id="email-error" class="invalid-feedback">{{ $message }}</div>@enderror
+                            <x-campo name="email" label="Correo electrónico" type="email" required maxlength="255" autocomplete="email" />
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input id="password" type="password" name="password"
-                                   class="form-control @error('password') is-invalid @enderror" required minlength="8" maxlength="72" autocomplete="new-password"
-                                   aria-describedby="password-help @error('password') password-error @enderror"
-                                   @error('password') aria-invalid="true" @enderror>
-                            <div id="password-help" class="form-text">Usa entre 8 y 72 caracteres.</div>
-                            @error('password')<div id="password-error" class="invalid-feedback">{{ $message }}</div>@enderror
+                            <x-campo name="password" label="Contraseña" type="password" required minlength="8" maxlength="72"
+                                     autocomplete="new-password" help="Usa entre 8 y 72 caracteres." />
                         </div>
                         <div class="mb-4">
-                            <label for="password_confirmation" class="form-label">Confirmar contraseña</label>
-                            <input id="password_confirmation" type="password" name="password_confirmation"
-                                   class="form-control @error('password_confirmation') is-invalid @enderror" required minlength="8" maxlength="72" autocomplete="new-password"
-                                   @error('password_confirmation') aria-invalid="true" aria-describedby="confirmation-error" @enderror>
-                            @error('password_confirmation')<div id="confirmation-error" class="invalid-feedback">{{ $message }}</div>@enderror
+                            <x-campo name="password_confirmation" label="Confirmar contraseña" type="password"
+                                     required minlength="8" maxlength="72" autocomplete="new-password" />
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Crear cuenta</button>
                     </form>

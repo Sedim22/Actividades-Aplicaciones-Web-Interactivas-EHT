@@ -14,10 +14,10 @@ class RegistroRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
-            'password' => ['required', 'string', 'min:8', 'max:72', 'confirmed'],
-            'password_confirmation' => ['required', 'string'],
+            'name' => ['bail', 'required', 'string', 'max:255'],
+            'email' => ['bail', 'required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'password' => ['bail', 'required', 'string', 'min:8', 'max:72'],
+            'password_confirmation' => ['bail', 'required', 'string', 'same:password'],
         ];
     }
 
@@ -43,7 +43,7 @@ class RegistroRequest extends FormRequest
             'password.string' => 'La contraseña debe ser texto.',
             'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
             'password.max' => 'La contraseña no debe superar los 72 caracteres.',
-            'password.confirmed' => 'Las contraseñas no coinciden.',
+            'password_confirmation.same' => 'Las contraseñas no coinciden.',
             'password_confirmation.required' => 'Confirma tu contraseña.',
             'password_confirmation.string' => 'La confirmación de contraseña debe ser texto.',
         ];

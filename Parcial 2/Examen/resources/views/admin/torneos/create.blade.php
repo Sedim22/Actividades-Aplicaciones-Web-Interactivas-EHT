@@ -10,7 +10,7 @@
             <p class="text-body-secondary mb-4">Define el juego, la fecha y las plazas de tu torneo.</p>
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-4">
-                    <form method="POST" action="{{ route('admin.torneos.store') }}">
+                    <form method="POST" action="{{ route('admin.torneos.store') }}" novalidate>
                         @csrf
                         @include('admin.torneos.formulario')
                         <div class="d-flex flex-wrap gap-2 mt-4">

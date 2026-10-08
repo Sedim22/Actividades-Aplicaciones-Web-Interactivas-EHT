@@ -68,7 +68,7 @@ class AutenticacionTest extends TestCase
             'correo inválido' => [['email' => 'sin-correo'], 'email', 'Ingresa un correo electrónico válido.'],
             'contraseña vacía' => [['password' => ''], 'password', 'La contraseña es obligatoria.'],
             'contraseña corta' => [['password' => 'abc', 'password_confirmation' => 'abc'], 'password', 'La contraseña debe tener al menos 8 caracteres.'],
-            'confirmación diferente' => [['password_confirmation' => 'OtroSecreto'], 'password', 'Las contraseñas no coinciden.'],
+            'confirmación diferente' => [['password_confirmation' => 'OtroSecreto'], 'password_confirmation', 'Las contraseñas no coinciden.'],
             'confirmación vacía' => [['password_confirmation' => ''], 'password_confirmation', 'Confirma tu contraseña.'],
         ];
     }
